@@ -25,10 +25,21 @@ $(document).ready(function () {
   
     // --- Скидання та запуск таймера ---
     function resetTimer() {
-      clearInterval(interval);
-      const totalTime = baseTime + (level - 1) * 5;
-      timer = totalTime;
-      $('#time').text(timer);
+        clearInterval(interval);
+      
+        // Розрахунок часу залежно від рівня
+        let additionalTime = 0;
+      
+        if (level <= 3) {
+          additionalTime = (level - 1) * 5;
+        } else if (level <= 10) {
+          additionalTime = 2 * 5 + (level - 3) * 20;
+        } else {
+          additionalTime = 2 * 5 + 7 * 10 + (level - 10) * 30;
+        }
+      
+        timer = baseTime + additionalTime;
+        $('#time').text(timer);
     }
   
     function startTimer() {

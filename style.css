@@ -151,6 +151,15 @@ td:hover {
 .hidden {
     display: none !important;
 }
+
+/*інший колір для кнопок Наступний рівень та Продовжити*/
+#next-level, #resume  {
+    background-color: #449b47; /* Зелений */
+}
+
+#next-level, #resume:hover {
+    background-color: #2e7532; /* Темніший зелений при наведенні */
+}
   
 /* ===== Футер ===== */
 footer {

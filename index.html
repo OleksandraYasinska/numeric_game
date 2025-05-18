@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Гра: послідовність чисел</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Гра: натискай числа по порядку!</h1>
+        <p id="level-info">Рівень: <span id="level">1</span></p>
+        <p id="timer">Час: <span id="time">30</span> сек</p>
+        <button id="menu-toggle">Меню</button>
+        <button id="mute-toggle">♫</button>
+    </header>
+
+    <main id="game">
+        <table class="field"></table>
+    </main>
+
+    <div id="menu" class="hidden">
+        <div class="menu-content">
+            <h2 id="menu-title">Пауза</h2>
+            <p id="menu-message"></p>
+            <button id="resume">Продовжити</button>
+            <button id="restart">Почати спочатку</button>
+            <button id="next-level" class="hidden">Наступний рівень</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Yasinska Oleksandra</p>
+    </footer>
+
+    <audio id="bg-music" loop>
+        <source src="audio/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

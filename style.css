@@ -1,0 +1,228 @@
+/* ===== Загальні стилі ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #1c1c1c;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+  
+/* ===== Хедер ===== */
+header {
+    background-color: #111;
+    padding: 20px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+  
+header h1 {
+    flex: 1 1 100%;
+    font-size: 2.4rem;
+    margin: 0;
+    line-height: 1.2;
+    word-break: break-word;
+    padding: 0 10px;
+}
+  
+#level-info,
+#timer {
+    font-size: 1.2rem;
+    margin: 5px;
+    flex: 1 1 100%;
+}
+  
+/* ===== Кнопки керування ===== */
+#menu-toggle,
+#mute-toggle {
+    position: absolute;
+    top: 20px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+}
+  
+#menu-toggle:hover,
+#mute-toggle:hover {
+    background-color: #d32f2f;
+}
+  
+#menu-toggle {
+    right: 80px;
+}
+  
+#mute-toggle {
+    right: 20px;
+}
+  
+/* ===== Гра ===== */
+#game {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+  
+.field {
+    border-collapse: collapse;
+}
+  
+/* Клітинки */
+td {
+    width: clamp(32px, 7vw, 60px);
+    height: clamp(32px, 7vw, 60px);
+    border: 2px solid white;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: clamp(12px, 2vw, 20px);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+  
+td:hover {
+    transform: scale(1.05);
+}
+  
+.active {
+    background-color: crimson !important;
+    color: white !important;
+    pointer-events: none;
+}
+  
+/* ===== Меню-пауза ===== */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+  
+.menu-content {
+    background: #222;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    max-width: 90%;
+    width: 400px;
+}
+  
+.menu-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+  
+.menu-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f44336;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+.menu-content button:hover {
+    background-color: #d32f2f;
+}
+  
+.hidden {
+    display: none !important;
+}
+  
+/* ===== Футер ===== */
+footer {
+    background-color: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+  
+/* ===== Планшети ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+  
+    #level-info,
+    #timer {
+        font-size: 1rem;
+    }
+  
+    #menu-toggle,
+    #mute-toggle {
+        top: 10px;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+  
+    .menu-content {
+        padding: 20px;
+        width: 90%;
+    }
+  
+    td {
+        width: clamp(28px, 9vw, 50px);
+        height: clamp(28px, 9vw, 50px);
+        font-size: clamp(10px, 2.8vw, 16px);
+    }
+}
+  
+/* ===== Телефони < 480px ===== */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
+    }
+  
+    header h1 {
+        font-size: 1.3rem;
+        padding: 10px 0;
+    }
+  
+    #menu-toggle,
+    #mute-toggle {
+        top: 6px;
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+  
+    td {
+        width: clamp(24px, 11vw, 42px);
+        height: clamp(24px, 11vw, 42px);
+        font-size: clamp(10px, 2.5vw, 14px);
+    }
+  
+    .menu-content {
+        width: 95%;
+        padding: 16px;
+    }
+  
+    .menu-content button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+}  
